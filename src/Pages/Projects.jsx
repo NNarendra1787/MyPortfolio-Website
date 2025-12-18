@@ -1,13 +1,14 @@
+
+
 // import {
 //   Container,
 //   Typography,
-//   Grid,
 //   Card,
 //   CardContent,
 //   CardActions,
 //   Button,
 //   Chip,
-//   Stack,
+//   Box,
 // } from "@mui/material";
 
 // const projects = [
@@ -28,110 +29,99 @@
 //     github: "#",
 //   },
 //   {
-//     title: "AI / API Based Application",
+//     title: "Book Store Application",
 //     description:
-//       "An application integrating modern APIs and AI-based features to demonstrate real-world API consumption.",
-//     tech: ["React", "API", "AI"],
+//       "React-based book store app with product listing, cart functionality, and modern UI.",
+//     tech: ["React", "API", "CSS"],
 //     live: "#",
 //     github: "#",
 //   },
 //   {
-//     title: "React Admin Dashboard",
+//     title: "PrepBytes UI Clone",
 //     description:
-//       "A responsive admin dashboard built with Material UI, featuring charts, tables, and reusable components.",
-//     tech: ["React", "Material UI", "Charts"],
-//     live: "#",
-//     github: "#",
-//   },
-//   {
-//     title: "Logic / Learning Project",
-//     description:
-//       "A project focused on problem-solving and algorithmic thinking to strengthen core logic and fundamentals.",
-//     tech: ["JavaScript", "Algorithms"],
+//       "Frontend clone of PrepBytes platform focusing on responsive UI and component-based architecture.",
+//     tech: ["React", "Material UI"],
 //     live: "#",
 //     github: "#",
 //   },
 // ];
 
-
-// function Projects() {
+// const Projects = () => {
 //   return (
-//       <Container maxWidth="lg" sx={{ py: 8 }}>
-//       {/* Page Title */}
-//       <Typography variant="h4" fontWeight="bold" gutterBottom>
+//     <Container maxWidth="lg" sx={{ py: 8 }}>
+//       <Typography variant="h4" fontWeight="bold" gutterBottom mt="20px">
 //         Projects
 //       </Typography>
 
-//       <Typography color="text.secondary" sx={{ mb: 5, maxWidth: 700 }}>
-//         Here are some of the projects I’ve built to demonstrate my skills in
-//         full stack development, API integration, and problem solving.
+//       <Typography
+//         color="text.secondary"
+//         sx={{ mb: 5, maxWidth: 700 }}
+//       >
+//         Here are some of the projects I’ve built to demonstrate my skills in full
+//         stack development, API integration, and problem solving.
 //       </Typography>
 
-//       {/* Projects Grid */}
-//       <Grid container spacing={4}>
-//         {projects.map((project) => (
-//           <Grid item xs={12} md={6} key={project.title}>
-//             <Card
-//               sx={{
-//                 height: "100%",
-//                 display: "flex",
-//                 flexDirection: "column",
-//                 transition: "0.3s",
-//                 "&:hover": {
-//                   transform: "translateY(-8px)",
-//                   boxShadow: 6,
-//                 },
-//               }}
-//             >
-//               <CardContent sx={{ flexGrow: 1 }}>
-//                 <Typography variant="h6" fontWeight="bold">
-//                   {project.title}
-//                 </Typography>
+//       {/* CSS GRID (THE FIX) */}
+//       <Box
+//         sx={{
+//           display: "grid",
+          
+//           gridTemplateColumns: {
+//             xs: "1fr",
+//             md: "2fr 2fr",
+//           },
+//           gap: 4,
+//         }}
+//       >
+//         {projects.map((project, index) => (
+//           <Card
+//             key={index}
+//             sx={{
+//               height: "100%",
+//               display: "flex",
+//               flexDirection: "column",
+//               backgroundColor: "rgba(255,255,255,0.04)",
+//               border: "1px solid rgba(255,255,255,0.08)",
+//               borderRadius: 3,
+//             }}
+//           >
+//             <CardContent sx={{ flexGrow: 1 }}>
+//               <Typography variant="h6" fontWeight="bold" gutterBottom>
+//                 {project.title}
+//               </Typography>
 
-//                 <Typography
-//                   variant="body2"
-//                   color="text.secondary"
-//                   sx={{ mt: 1 }}
-//                 >
-//                   {project.description}
-//                 </Typography>
+//               <Typography
+//                 variant="body2"
+//                 color="text.secondary"
+//                 sx={{ mb: 2, lineHeight: 1.7 }}
+//               >
+//                 {project.description}
+//               </Typography>
 
-//                 {/* Tech Stack */}
-//                 <Stack direction="row" spacing={1} sx={{ mt: 2 }} flexWrap="wrap">
-//                   {project.tech.map((tech) => (
-//                     <Chip key={tech} label={tech} size="small" />
-//                   ))}
-//                 </Stack>
-//               </CardContent>
+//               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+//                 {project.tech.map((tech, i) => (
+//                   <Chip key={i} label={tech} size="small" />
+//                 ))}
+//               </Box>
+//             </CardContent>
 
-//               {/* Action Buttons */}
-//               <CardActions sx={{ px: 2, pb: 2 }}>
-//                 <Button
-//                   size="small"
-//                   variant="contained"
-//                   href={project.live}
-//                   target="_blank"
-//                 >
-//                   Live
-//                 </Button>
-//                 <Button
-//                   size="small"
-//                   variant="outlined"
-//                   href={project.github}
-//                   target="_blank"
-//                 >
-//                   GitHub
-//                 </Button>
-//               </CardActions>
-//             </Card>
-//           </Grid>
+//             <CardActions sx={{ px: 2, pb: 2 }}>
+//               <Button variant="contained" size="small" href={project.live}>
+//                 Live
+//               </Button>
+//               <Button variant="outlined" size="small" href={project.github}>
+//                 GitHub
+//               </Button>
+//             </CardActions>
+//           </Card>
 //         ))}
-//       </Grid>
+//       </Box>
 //     </Container>
-//   )
-// }
+//   );
+// };
 
-// export default Projects
+// export default Projects;
+
 
 import {
   Container,
@@ -144,64 +134,82 @@ import {
   Box,
 } from "@mui/material";
 
+// IMPORT PROJECT IMAGES
+import BigBuddha from "../assets/bb.png";
+import TheSiren from "../assets/TheSiren.png";
+import HubSpot from "../assets/HubSpot.png";
+import Prepbytes from "../assets/Prepbytes.png";
+import BookStore from "../assets/BookStore.png";
+
+
 const projects = [
   {
-    title: "Product & Supplier Management System",
+    title: "BigBuddha – E-Commerce Platform",
     description:
-      "A full stack MERN application for managing products and suppliers with CRUD operations, REST APIs, and a clean admin UI.",
-    tech: ["React", "Material UI", "Node.js", "Express", "MongoDB"],
-    live: "#",
-    github: "#",
+      "A responsive e-commerce web application featuring product listings, cart functionality, and clean UI flows. Built with a focus on component reusability and real-world shopping experience.",
+    tech: ["React", "JavaScript", "CSS", "Netlify"],
+    live: "https://splendorous-fox-dcef47.netlify.app/",
+    github: "https://github.com/NNarendra1787/E-Commerce",
+    image: BigBuddha,
   },
   {
-    title: "MERN Authentication System",
+    title: "The Siren – News & Blog Platform",
     description:
-      "JWT-based authentication system with secure login, signup, protected routes, and password hashing.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-    live: "#",
-    github: "#",
+      "A React-based news and blog platform with categorized content, routing, and reusable card components designed for a clean reading experience.",
+    tech: ["React", "JavaScript", "CSS", "Netlify"],
+    live: "https://neon-stardust-e7315d.netlify.app/",
+    github: "https://github.com/NNarendra1787/React-Project",
+    image: TheSiren,
   },
   {
-    title: "Book Store Application",
+    title: "HubSpot – Authentication System (JWT)",
     description:
-      "React-based book store app with product listing, cart functionality, and modern UI.",
-    tech: ["React", "API", "CSS"],
-    live: "#",
-    github: "#",
+      "Authentication system with login and registration UI. JWT-based authentication implemented on the backend (currently offline), showcasing understanding of auth flows and secure access handling.",
+    tech: ["React", "Material UI", "JWT", "Vercel"],
+    live: "https://hub-spot-f.vercel.app/",
+    github: "https://github.com/NNarendra1787/Hub-Spot-F",
+    image: HubSpot,
   },
   {
-    title: "PrepBytes UI Clone",
+    title: "PrepBytes – EdTech Website Clone",
     description:
-      "Frontend clone of PrepBytes platform focusing on responsive UI and component-based architecture.",
-    tech: ["React", "Material UI"],
+      "A frontend clone of the PrepBytes EdTech platform built using React, focusing on responsive layouts, routing, and component-based architecture.",
+    tech: ["React", "JavaScript", "CSS", "Vercel"],
+    live: "https://prepbytes-demo.vercel.app/",
+    github: "https://github.com/NNarendra1787/Prepbytes-Demo",
+    image: Prepbytes,
+  },
+  {
+    title: "BookBack – Book Management System",
+    description:
+      "A book management system designed to manage book records with structured UI and CRUD-style workflows, focusing on practical system design.",
+    tech: ["React", "JavaScript", "CSS"],
     live: "#",
     github: "#",
+    image: BookStore,
   },
 ];
 
 const Projects = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
-      <Typography variant="h4" fontWeight="bold" gutterBottom mt="20px">
+      <Typography variant="h4" fontWeight="bold" gutterBottom>
         Projects
       </Typography>
 
-      <Typography
-        color="text.secondary"
-        sx={{ mb: 5, maxWidth: 700 }}
-      >
-        Here are some of the projects I’ve built to demonstrate my skills in full
-        stack development, API integration, and problem solving.
+      <Typography color="text.secondary" sx={{ mb: 6, maxWidth: 750 }}>
+        A selection of projects showcasing my experience in building real-world
+        applications, user interfaces, and authentication systems using modern
+        web technologies.
       </Typography>
 
-      {/* CSS GRID (THE FIX) */}
+      {/* PROJECT GRID */}
       <Box
         sx={{
           display: "grid",
-          
           gridTemplateColumns: {
             xs: "1fr",
-            md: "2fr 2fr",
+            md: "1fr 1fr",
           },
           gap: 4,
         }}
@@ -213,11 +221,29 @@ const Projects = () => {
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              borderRadius: 3,
               backgroundColor: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: 3,
+              overflow: "hidden",
+              transition: "0.3s",
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: 6,
+              },
             }}
           >
+            {/* IMAGE */}
+            <Box
+              component="img"
+              src={project.image}
+              alt={project.title}
+              sx={{
+                width: "100%",
+                height: 200,
+                objectFit: "cover",
+              }}
+            />
+
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 {project.title}
@@ -231,6 +257,7 @@ const Projects = () => {
                 {project.description}
               </Typography>
 
+              {/* TECH STACK */}
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
                 {project.tech.map((tech, i) => (
                   <Chip key={i} label={tech} size="small" />
@@ -239,12 +266,26 @@ const Projects = () => {
             </CardContent>
 
             <CardActions sx={{ px: 2, pb: 2 }}>
-              <Button variant="contained" size="small" href={project.live}>
-                Live
-              </Button>
-              <Button variant="outlined" size="small" href={project.github}>
-                GitHub
-              </Button>
+              {project.live !== "#" && (
+                <Button
+                  variant="contained"
+                  size="small"
+                  href={project.live}
+                  target="_blank"
+                >
+                  Live
+                </Button>
+              )}
+              {project.github !== "#" && (
+                <Button
+                  variant="outlined"
+                  size="small"
+                  href={project.github}
+                  target="_blank"
+                >
+                  GitHub
+                </Button>
+              )}
             </CardActions>
           </Card>
         ))}
@@ -254,4 +295,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
