@@ -34,8 +34,337 @@
 
 // export default Skills;
 
-import { Box, Card, Typography, LinearProgress } from "@mui/material";
+// import { Box, Card, Typography, LinearProgress } from "@mui/material";
 
+// const SkillBar = ({ label, value }) => (
+//   <Box sx={{ mb: 2 }}>
+//     <Box
+//       sx={{
+//         display: "flex",
+//         justifyContent: "space-between",
+//         mb: 0.5,
+//       }}
+//     >
+//       <Typography variant="body2">{label}</Typography>
+//       <Typography variant="body2" color="text.secondary">
+//         {value}%
+//       </Typography>
+//     </Box>
+//     <LinearProgress
+//       variant="determinate"
+//       value={value}
+//       sx={{
+//         height: 8,
+//         borderRadius: 5,
+//         backgroundColor: "rgba(255,255,255,0.15)",
+//         "& .MuiLinearProgress-bar": {
+//           borderRadius: 5,
+//         },
+//       }}
+//     />
+//   </Box>
+// );
+
+// const SkillCard = ({ title, skills }) => (
+//   <Card
+//     sx={{
+//       p: 3,
+//       height: "100%",
+//       borderRadius: 3,
+//       backgroundColor: "rgba(255,255,255,0.04)",
+//       border: "1px solid rgba(255,255,255,0.08)",
+//     }}
+//   >
+//     <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
+//       {title}
+//     </Typography>
+//     {skills.map((skill, index) => (
+//       <SkillBar key={index} {...skill} />
+//     ))}
+//   </Card>
+// );
+
+// const Skills = () => {
+//   return (
+//     <Box sx={{ minHeight: "100vh", py: 6, mt: 5}}>
+//       {/* Header */}
+//       <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 }} >
+//         <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
+//           Skills
+//         </Typography>
+//         <Typography color="text.secondary" sx={{ maxWidth: 700 }}>
+//           A snapshot of the technologies and tools I work with while building
+//           modern, scalable web applications.
+//         </Typography>
+//       </Box>
+
+//       {/* Skills Grid */}
+//       <Box
+//         sx={{
+//           maxWidth: "1200px",
+//           mx: "auto",
+//           px: 2,
+//           mt: 6,
+//           display: "grid",
+//           gridTemplateColumns: {
+//             xs: "1fr",
+//             sm: "1fr 1fr",
+//             lg: "repeat(3, 1fr)",
+//           },
+//           gap: 4,
+//         }}
+
+//         id="SkillsSizer"
+//       >
+//         <SkillCard
+//           title="Languages"
+//           skills={[
+//             { label: "JavaScript", value: 80 },
+//             { label: "Python", value: 70 },
+//             { label: "C", value: 60 },
+//             { label: "Java", value: 60 },
+//           ]}
+//         />
+
+//         <SkillCard
+//           title="Frontend"
+//           skills={[
+//             { label: "React", value: 85 },
+//             { label: "Material UI", value: 80 },
+//             { label: "HTML", value: 85 },
+//             { label: "CSS", value: 75 },
+//           ]}
+//         />
+
+//         <SkillCard
+//           title="Backend"
+//           skills={[
+//             { label: "Node.js", value: 75 },
+//             { label: "Express.js", value: 70 },
+//             { label: "REST APIs", value: 75 },
+//           ]}
+//         />
+
+//         <SkillCard
+//           title="Database"
+//           skills={[
+//             { label: "MongoDB", value: 75 },
+//             { label: "MySQL", value: 65 },
+//             { label: "PostgreSQL", value: 60 },
+//           ]}
+//         />
+
+//         <SkillCard
+//           title="Tools & Platforms"
+//           skills={[
+//             { label: "Git & GitHub", value: 80 },
+//             { label: "Postman", value: 75 },
+//             { label: "Vercel / Netlify", value: 70 },
+//           ]}
+//         />
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default Skills;
+
+// import { Box, Card, Typography, LinearProgress } from "@mui/material";
+// import { motion } from "framer-motion";
+// /* ================= ANIMATIONS ================= */ const fadeUp = {
+//   hidden: { opacity: 0, y: 40 },
+//   visible: { opacity: 1, y: 0 },
+// };
+// /* ================= SKILL BAR ================= */ const SkillBar = ({
+//   label,
+//   value,
+// }) => (
+//   <Box sx={{ mb: 2 }}>
+//     {" "}
+//     <Box sx={{ display: "flex", justifyContent: "space-between", mb: 0.5 }}>
+//       {" "}
+//       <Typography variant="body2">{label}</Typography>{" "}
+//       <Typography variant="body2" color="text.secondary">
+//         {" "}
+//         {value}%{" "}
+//       </Typography>{" "}
+//     </Box>{" "}
+//     <motion.div
+//       initial={{ width: 0 }}
+//       whileInView={{ width: "100%" }}
+//       viewport={{ once: true }}
+//       transition={{ duration: 1 }}
+//     >
+//       {" "}
+//       <LinearProgress
+//         variant="determinate"
+//         value={value}
+//         sx={{
+//           height: 8,
+//           borderRadius: 5,
+//           backgroundColor: "rgba(255,255,255,0.15)",
+//           "& .MuiLinearProgress-bar": {
+//             borderRadius: 5,
+//             background: "linear-gradient(90deg, #7c7cff, #00e5ff)",
+//           },
+//         }}
+//       />{" "}
+//     </motion.div>{" "}
+//   </Box>
+// );
+// /* ================= SKILL CARD ================= */ const SkillCard = ({
+//   title,
+//   skills,
+// }) => (
+//   <motion.div
+//     variants={fadeUp}
+//     initial="hidden"
+//     whileInView="visible"
+//     viewport={{ once: true }}
+//     transition={{ duration: 0.6 }}
+//     whileHover={{ y: -10 }}
+//   >
+//     {" "}
+//     <Card
+//       sx={{
+//         p: 3,
+//         height: "100%",
+//         borderRadius: 4,
+//         backdropFilter: "blur(14px)",
+//         background: "rgba(255,255,255,0.06)",
+//         border: "1px solid rgba(255,255,255,0.12)",
+//         boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+//         transition: "0.3s",
+//       }}
+//     >
+//       {" "}
+//       <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
+//         {" "}
+//         {title}{" "}
+//       </Typography>{" "}
+//       {skills.map((skill, index) => (
+//         <SkillBar key={index} {...skill} />
+//       ))}{" "}
+//     </Card>{" "}
+//   </motion.div>
+// );
+// /* ================= MAIN COMPONENT ================= */ const Skills = () => {
+//   return (
+//     <Box sx={{ minHeight: "100vh", py: 10, mt: 5 }}>
+//       {" "}
+//       {/* HEADER */}{" "}
+//       <motion.div
+//         variants={fadeUp}
+//         initial="hidden"
+//         whileInView="visible"
+//         viewport={{ once: true }}
+//         transition={{ duration: 0.6 }}
+//       >
+//         {" "}
+//         <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 }}>
+//           {" "}
+//           <Typography
+//             variant="h3"
+//             sx={{
+//               fontWeight: 700,
+//               mb: 1,
+//               background: "linear-gradient(90deg,#7c7cff,#00e5ff)",
+//               WebkitBackgroundClip: "text",
+//               WebkitTextFillColor: "transparent",
+//             }}
+//           >
+//             {" "}
+//             Skills{" "}
+//           </Typography>{" "}
+//           <Typography color="text.secondary" sx={{ maxWidth: 700 }}>
+//             {" "}
+//             A snapshot of the technologies and tools I work with while building
+//             modern, scalable web applications.{" "}
+//           </Typography>{" "}
+//         </Box>{" "}
+//       </motion.div>{" "}
+//       {/* SKILLS GRID */}{" "}
+//       <Box
+//         sx={{
+//           maxWidth: "1200px",
+//           mx: "auto",
+//           px: 2,
+//           mt: 6,
+//           display: "grid",
+//           gridTemplateColumns: {
+//             xs: "1fr",
+//             sm: "1fr 1fr",
+//             lg: "repeat(3, 1fr)",
+//           },
+//           gap: 4,
+//         }}
+//       >
+//         {" "}
+//         <SkillCard
+//           title="Languages"
+//           skills={[
+//             { label: "JavaScript", value: 80 },
+//             { label: "Python", value: 70 },
+//             { label: "C", value: 60 },
+//             { label: "Java", value: 60 },
+//           ]}
+//         />{" "}
+//         <SkillCard
+//           title="Frontend"
+//           skills={[
+//             { label: "React", value: 85 },
+//             { label: "Material UI", value: 80 },
+//             { label: "HTML", value: 85 },
+//             { label: "CSS", value: 75 },
+//           ]}
+//         />{" "}
+//         <SkillCard
+//           title="Backend"
+//           skills={[
+//             { label: "Node.js", value: 75 },
+//             { label: "Express.js", value: 70 },
+//             { label: "REST APIs", value: 75 },
+//           ]}
+//         />{" "}
+//         <SkillCard
+//           title="Database"
+//           skills={[
+//             { label: "MongoDB", value: 75 },
+//             { label: "MySQL", value: 65 },
+//             { label: "PostgreSQL", value: 60 },
+//           ]}
+//         />{" "}
+//         <SkillCard
+//           title="Tools & Platforms"
+//           skills={[
+//             { label: "Git & GitHub", value: 80 },
+//             { label: "Postman", value: 75 },
+//             { label: "Vercel / Netlify", value: 70 },
+//           ]}
+//         />{" "}
+//       </Box>{" "}
+//     </Box>
+//   );
+// };
+// export default Skills;
+
+
+import {
+  Box,
+  Card,
+  Typography,
+  LinearProgress,
+  Container,
+} from "@mui/material";
+import { motion } from "framer-motion";
+
+/* ================= ANIMATIONS ================= */
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
+
+/* ================= SKILL BAR ================= */
 const SkillBar = ({ label, value }) => (
   <Box sx={{ mb: 2 }}>
     <Box
@@ -50,121 +379,159 @@ const SkillBar = ({ label, value }) => (
         {value}%
       </Typography>
     </Box>
-    <LinearProgress
-      variant="determinate"
-      value={value}
-      sx={{
-        height: 8,
-        borderRadius: 5,
-        backgroundColor: "rgba(255,255,255,0.15)",
-        "& .MuiLinearProgress-bar": {
+
+    <motion.div
+      initial={{ width: 0 }}
+      whileInView={{ width: "100%" }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
+      <LinearProgress
+        variant="determinate"
+        value={value}
+        sx={{
+          height: 8,
           borderRadius: 5,
-        },
-      }}
-    />
+          backgroundColor: "rgba(255,255,255,0.15)",
+          "& .MuiLinearProgress-bar": {
+            borderRadius: 5,
+            background:
+              "linear-gradient(90deg, #7c7cff, #00e5ff)",
+          },
+        }}
+      />
+    </motion.div>
   </Box>
 );
 
+/* ================= SKILL CARD ================= */
 const SkillCard = ({ title, skills }) => (
-  <Card
-    sx={{
-      p: 3,
-      height: "100%",
-      borderRadius: 3,
-      backgroundColor: "rgba(255,255,255,0.04)",
-      border: "1px solid rgba(255,255,255,0.08)",
-    }}
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    whileHover={{ y: -10 }}
   >
-    <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
-      {title}
-    </Typography>
-    {skills.map((skill, index) => (
-      <SkillBar key={index} {...skill} />
-    ))}
-  </Card>
+    <Card
+      sx={{
+        p: 3,
+        height: "100%",
+        borderRadius: 4,
+        backdropFilter: "blur(14px)",
+        background: "rgba(255,255,255,0.06)",
+        border: "1px solid rgba(255,255,255,0.12)",
+        boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+        transition: "0.3s",
+      }}
+    >
+      <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
+        {title}
+      </Typography>
+      {skills.map((skill, index) => (
+        <SkillBar key={index} {...skill} />
+      ))}
+    </Card>
+  </motion.div>
 );
 
+/* ================= MAIN COMPONENT ================= */
 const Skills = () => {
   return (
-    <Box sx={{ minHeight: "100vh", py: 6, mt: 5}}>
-      {/* Header */}
-      <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 }} >
-        <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
-          Skills
-        </Typography>
-        <Typography color="text.secondary" sx={{ maxWidth: 700 }}>
-          A snapshot of the technologies and tools I work with while building
-          modern, scalable web applications.
-        </Typography>
-      </Box>
+    <Box sx={{ width: "100%", py: 10, overflowX: "hidden" }}>
+      <Container maxWidth="lg">
+        {/* HEADER */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              mb: 1,
+              background: "linear-gradient(90deg,#7c7cff,#00e5ff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Skills
+          </Typography>
 
-      {/* Skills Grid */}
-      <Box
-        sx={{
-          maxWidth: "1200px",
-          mx: "auto",
-          px: 2,
-          mt: 6,
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "1fr 1fr",
-            lg: "repeat(3, 1fr)",
-          },
-          gap: 4,
-        }}
+          <Typography color="text.secondary" sx={{ maxWidth: 700 }}>
+            A snapshot of the technologies and tools I work with while building
+            modern, scalable web applications.
+          </Typography>
+        </motion.div>
 
-        id="SkillsSizer"
-      >
-        <SkillCard
-          title="Languages"
-          skills={[
-            { label: "JavaScript", value: 80 },
-            { label: "Python", value: 70 },
-            { label: "C", value: 60 },
-            { label: "Java", value: 60 },
-          ]}
-        />
+        {/* SKILLS GRID */}
+        <Box
+          sx={{
+            mt: 6,
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "1fr 1fr",
+              lg: "repeat(3, 1fr)",
+            },
+            gap: 4,
+          }}
+        >
+          <SkillCard
+            title="Languages"
+            skills={[
+              { label: "JavaScript", value: 80 },
+              { label: "Python", value: 70 },
+              { label: "C", value: 60 },
+              { label: "Java", value: 60 },
+            ]}
+          />
 
-        <SkillCard
-          title="Frontend"
-          skills={[
-            { label: "React", value: 85 },
-            { label: "Material UI", value: 80 },
-            { label: "HTML", value: 85 },
-            { label: "CSS", value: 75 },
-          ]}
-        />
+          <SkillCard
+            title="Frontend"
+            skills={[
+              { label: "React", value: 85 },
+              { label: "Material UI", value: 80 },
+              { label: "HTML", value: 85 },
+              { label: "CSS", value: 75 },
+            ]}
+          />
 
-        <SkillCard
-          title="Backend"
-          skills={[
-            { label: "Node.js", value: 75 },
-            { label: "Express.js", value: 70 },
-            { label: "REST APIs", value: 75 },
-          ]}
-        />
+          <SkillCard
+            title="Backend"
+            skills={[
+              { label: "Node.js", value: 75 },
+              { label: "Express.js", value: 70 },
+              { label: "REST APIs", value: 75 },
+            ]}
+          />
 
-        <SkillCard
-          title="Database"
-          skills={[
-            { label: "MongoDB", value: 75 },
-            { label: "MySQL", value: 65 },
-            { label: "PostgreSQL", value: 60 },
-          ]}
-        />
+          <SkillCard
+            title="Database"
+            skills={[
+              { label: "MongoDB", value: 75 },
+              { label: "MySQL", value: 65 },
+              { label: "PostgreSQL", value: 60 },
+            ]}
+          />
 
-        <SkillCard
-          title="Tools & Platforms"
-          skills={[
-            { label: "Git & GitHub", value: 80 },
-            { label: "Postman", value: 75 },
-            { label: "Vercel / Netlify", value: 70 },
-          ]}
-        />
-      </Box>
+          <SkillCard
+            title="Tools & Platforms"
+            skills={[
+              { label: "Git & GitHub", value: 80 },
+              { label: "Postman", value: 75 },
+              { label: "Vercel / Netlify", value: 70 },
+            ]}
+          />
+        </Box>
+      </Container>
     </Box>
   );
 };
 
 export default Skills;
+
